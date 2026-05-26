@@ -9,16 +9,9 @@
 # IDE files
 .vscode/
 .idea/
-.qtcreator/
 *.swp
 *.swo
 
 # OS files
 Thumbs.db
 .DS_Store
-
-# Build directories
-build/
-
-# Claude Code local config
-.claude/

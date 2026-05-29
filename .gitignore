@@ -7,6 +7,7 @@
 *.pdb
 
 # IDE files
+.vs/
 .vscode/
 .idea/
 .qtcreator/

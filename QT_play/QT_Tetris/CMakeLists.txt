@@ -7,7 +7,7 @@ set(CMAKE_AUTOMOC ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
-add_executable(QT_Tetris
+add_executable(QT_Tetris WIN32
     main.cpp
     TetrisGame.h
     TetrisGame.cpp

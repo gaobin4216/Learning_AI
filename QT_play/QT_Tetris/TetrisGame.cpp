@@ -220,10 +220,12 @@ void TetrisGame::tick()
     if (m_flashFrames > 0) {
         --m_flashFrames;
         if (m_flashFrames == 0) {
-            // Actually clear the lines
+            // Actually clear the lines (sort bottom-to-top, adjust for prior shifts)
+            std::sort(m_clearingRows.begin(), m_clearingRows.end(), std::greater<int>());
             int cleared = 0;
             for (int row : m_clearingRows) {
-                for (int rr = row; rr > 0; --rr)
+                int adjusted = row + cleared;
+                for (int rr = adjusted; rr > 0; --rr)
                     for (int c = 0; c < BOARD_COLS; ++c)
                         m_board[rr][c] = m_board[rr-1][c];
                 for (int c = 0; c < BOARD_COLS; ++c)

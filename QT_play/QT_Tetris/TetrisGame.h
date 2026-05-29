@@ -5,13 +5,13 @@
 #include <QTimer>
 #include <QPainter>
 #include <QKeyEvent>
-#include <QMap>
 #include <QVector>
+#include <random>
 
 // Board dimensions (visible area)
 const int BOARD_COLS = 10;
 const int BOARD_ROWS = 20;
-const int HIDDEN_ROWS = 2;  // extra rows above visible area
+const int HIDDEN_ROWS = 2;
 const int TOTAL_ROWS = BOARD_ROWS + HIDDEN_ROWS;
 
 // 7 tetromino types
@@ -57,35 +57,54 @@ private:
     // Next piece and score
     TetroType m_nextType = TetroType::None;
     int m_score = 0;
+    int m_level = 1;
+    int m_linesCleared = 0;
     bool m_gameOver = false;
+    bool m_paused = false;
+
+    // Line clear animation
+    QVector<int> m_clearingRows;
+    int m_flashFrames = 0;
+    static const int FLASH_TOTAL = 8;
 
     QTimer *m_timer;
 
-    // Piece shape definitions: shapes[type][rotation][row][col]
+    // Modern random engine
+    std::mt19937 m_rng;
+
+    // 7-bag randomizer
+    QVector<TetroType> m_bag;
+    TetroType nextFromBag();
+
+    // Piece shape definitions: shapes[type][row][col] (base rotation only)
     static const int SHAPE[7][4][4];
     static const int PIECE_SIZE = 4;
 
     // Get shape grid for a given piece type and rotation
     const int (&getShape(TetroType t, int rot) const)[PIECE_SIZE][PIECE_SIZE];
 
-    // Spawn a new piece from top
     void spawnPiece();
-
-    // Check if placing a piece at (row, col) with given rotation is valid
     bool isValid(TetroType t, int row, int col, int rot) const;
-
-    // Lock current piece into the board
     void lockPiece();
-
-    // Clear completed lines and return number cleared
     int clearLines();
 
-    // Draw the grid, blocks, preview, and score
+    // Ghost piece: compute the drop row for current piece
+    int ghostRow() const;
+
+    // Wall kick: try rotating with horizontal offsets
+    bool tryRotate();
+
+    // Update timer interval based on level
+    void updateSpeed();
+
+    // Drawing
     void drawGrid(QPainter &p);
-    void drawBlock(QPainter &p, int row, int col, const QColor &color);
+    void drawBlock(QPainter &p, int row, int col, const QColor &color, int alpha = 255);
     void drawPreview(QPainter &p);
     void drawScore(QPainter &p);
     void drawGameOver(QPainter &p);
+    void drawPaused(QPainter &p);
+    void drawGhost(QPainter &p);
 };
 
 #endif // TETRISGAME_H

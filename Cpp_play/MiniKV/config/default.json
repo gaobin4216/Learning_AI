@@ -1,0 +1,14 @@
+{
+    "database": {
+        "path": "minikv.db",
+        "max_value_size_mb": 16
+    },
+    "compression": {
+        "enabled": true,
+        "threshold_bytes": 256
+    },
+    "logging": {
+        "level": "info",
+        "file": "minikv.log"
+    }
+}

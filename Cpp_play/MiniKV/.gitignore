@@ -1,0 +1,5 @@
+build/
+*.db
+*.log
+*.json
+!config/default.json

@@ -1,0 +1,7 @@
+Gear: z=20 m=3 OD=66 RootD=52.5
+Part created
+Drawing gear profile...
+Profile done
+Extruding...
+=== GEAR COMPLETE ===
+OD=66mm RootD=52.5mm Bore=20mm

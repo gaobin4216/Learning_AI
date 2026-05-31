@@ -1,0 +1,4 @@
+Connected to SolidWorks
+No active document
+D:\Learning_AI\check_sw.vbs(23, 1) Microsoft VBScript 运行时错误: 缺少对象: 'GetDocuments()'
+

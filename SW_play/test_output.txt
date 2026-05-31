@@ -1,0 +1,10 @@
+Default template: [C:\ProgramData\SolidWorks\SOLIDWORKS 2022\templates\Áã¼þ.prtdot]
+EXISTS: C:\Software\sw2022\SOLIDWORKS\lang\english\Tutorial\part.prtdot
+EXISTS: C:\Software\sw2022\SOLIDWORKS\lang\chinese-simplified\Tutorial\part.prtdot
+NOT FOUND: C:\Software\sw2022\SOLIDWORKS\templates\Part.prtdot
+NOT FOUND: C:\ProgramData\SolidWorks\SOLIDWORKS 2022\templates\Part.prtdot
+
+Trying to create part...
+Trying: C:\Software\sw2022\SOLIDWORKS\lang\english\Tutorial\part.prtdot
+SUCCESS with: C:\Software\sw2022\SOLIDWORKS\lang\english\Tutorial\part.prtdot
+Part created: Áã¼þ1

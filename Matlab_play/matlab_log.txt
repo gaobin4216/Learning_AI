@@ -1,0 +1,19 @@
+ 
+要开始，请键入 doc。
+有关产品信息，请访问 www.mathworks.com。
+ 
+开始仿真...
+仿真完成!
+正在展示实时动画...
+{操作在以下过程中被用户终止 clf (第 113 行)
+
+
+位置 admittance_force_response (第 98 行)
+    clf;
+} 
+{操作在以下过程中被用户终止 clf (第 113 行)
+
+
+位置 admittance_force_response (第 98 行)
+    clf;
+} 

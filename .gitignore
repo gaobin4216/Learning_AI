@@ -23,3 +23,5 @@ build/
 
 # Claude Code local config
 .claude/
+__pycache__/  
+*.pyc  

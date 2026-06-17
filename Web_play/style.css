@@ -1,0 +1,260 @@
+/* ========== Reset & Base ========== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* ========== Dashboard Container ========== */
+.dashboard {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ========== Hero / Header ========== */
+.hero {
+  text-align: center;
+  padding: 48px 0 24px;
+}
+
+.greeting {
+  font-size: 1.1rem;
+  color: #a0a0c0;
+  margin-bottom: 8px;
+}
+
+.clock {
+  font-size: 4.5rem;
+  font-weight: 200;
+  letter-spacing: 4px;
+  color: #ffffff;
+}
+
+.date {
+  font-size: 1rem;
+  color: #8888aa;
+  margin-top: 6px;
+}
+
+/* ========== Cards Grid ========== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 28px;
+  backdrop-filter: blur(12px);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #c0c0e0;
+}
+
+/* ========== Todo Card ========== */
+.todo-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.todo-input-row input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.todo-input-row input:focus {
+  border-color: #7c6ff7;
+}
+
+.todo-input-row button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: #7c6ff7;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.todo-input-row button:hover {
+  background: #6a5ce0;
+}
+
+#todoList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+#todoList li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: background 0.15s;
+}
+
+#todoList li:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#todoList li.done span {
+  text-decoration: line-through;
+  color: #666;
+}
+
+#todoList li .check-btn {
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+#todoList li.done .check-btn {
+  background: #7c6ff7;
+  border-color: #7c6ff7;
+}
+
+#todoList li .del-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+#todoList li .del-btn:hover {
+  color: #f44;
+}
+
+/* ========== Timer Card ========== */
+.timer-display {
+  font-size: 3.2rem;
+  font-weight: 200;
+  text-align: center;
+  letter-spacing: 6px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.timer-controls button {
+  padding: 10px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#startBtn {
+  background: #7c6ff7;
+  color: #fff;
+}
+
+#startBtn:hover {
+  background: #6a5ce0;
+}
+
+#resetBtn {
+  background: rgba(255, 255, 255, 0.08);
+  color: #c0c0e0;
+}
+
+#resetBtn:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* ========== Quote Card ========== */
+.quote-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quote-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #b0b0d0;
+  font-style: italic;
+}
+
+/* ========== Scrollbar ========== */
+#todoList::-webkit-scrollbar {
+  width: 4px;
+}
+
+#todoList::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 600px) {
+  .clock {
+    font-size: 2.8rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .timer-display {
+    font-size: 2.4rem;
+  }
+}

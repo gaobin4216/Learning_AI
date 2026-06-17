@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>个人仪表盘</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <!-- 顶部问候区 -->
+    <header class="hero">
+      <p class="greeting" id="greeting"></p>
+      <h1 class="clock" id="clock"></h1>
+      <p class="date" id="date"></p>
+    </header>
+
+    <!-- 卡片区域 -->
+    <section class="cards">
+      <!-- 待办清单 -->
+      <div class="card todo-card">
+        <h2>待办清单</h2>
+        <div class="todo-input-row">
+          <input type="text" id="todoInput" placeholder="添加新任务…" />
+          <button id="addBtn">+</button>
+        </div>
+        <ul id="todoList"></ul>
+      </div>
+
+      <!-- 番茄钟 -->
+      <div class="card timer-card">
+        <h2>番茄钟</h2>
+        <p class="timer-display" id="timerDisplay">25:00</p>
+        <div class="timer-controls">
+          <button id="startBtn">开始</button>
+          <button id="resetBtn">重置</button>
+        </div>
+      </div>
+
+      <!-- 名言卡片 -->
+      <div class="card quote-card">
+        <h2>每日一句</h2>
+        <p class="quote-text" id="quoteText"></p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

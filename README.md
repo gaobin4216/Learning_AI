@@ -20,6 +20,21 @@
 │   ├── LLM-Models-Comparison-2026.md  # 大模型对比
 │   └── mimo-v2.5-pro.md              # MiMo 模型介绍
 ├── Cpp_play/               # C++ 学习项目
+├── Py_play/                # Python 学习项目
+├── QT_play/                # Qt 开发项目
+│   ├── QtLearn/            # Qt 学习项目集合
+│   │   ├── Qt_20260618/    # Qt C++ 基础示例
+│   │   ├── Qt_20260619/    # Qt Widget 示例
+│   │   └── Qt_20260619_python/  # Qt for Python 示例
+│   ├── HardwareMonitor/    # 硬件监控工具
+│   ├── MusicPlayer/        # 音乐播放器
+│   ├── QT_Firework/        # 烟花动画效果
+│   ├── QT_Tetris/          # 俄罗斯方块游戏
+│   ├── SnakeGame/          # 贪吃蛇游戏
+│   └── simple_qt/          # 简单 Qt 示例
+├── Matlab_play/            # MATLAB 学习项目
+├── SW_play/                # SolidWorks 相关项目
+├── Web_play/               # Web 开发项目
 └── ...  (持续更新中)
 ```
 
